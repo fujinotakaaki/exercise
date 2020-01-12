@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.box1 {
+  height: 50px;
+  background-color: red;
+}
+.box2 {
+  height: 500px;
+  background-color: orange;
+}
+.box3 {
+  width: 960px;
+  background-color: darkgreen;
+  margin: 0 auto;
+}
+.box3-1{
+  width: 230px;
+  height: 1400px;
+  background-color: limegreen;
+  float: left;
+}
+.box3-2{
+  width: 500px;
+  height: 1400px;
+  background-color: green;
+  float: left;
+}
+.box4 {
+  height: 100px;
+  background-color: blue;
+}
