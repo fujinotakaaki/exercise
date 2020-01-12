@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+header{
+  width: 10%
+}
+header .headline{
+  font-size: 22px;
+}
+
+.nav{
+  text-align: center;
+}
+.list{
+  padding-left: 40px;
+}
