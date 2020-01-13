@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: gray;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.season_box{
+  width: 100%;
+  height: 200px;
+  background-image: url(img/box1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.season_box:nth-child(1) {
+  background-image: url(img/box1.jpg);
+}
+.season_box:nth-child(2) {
+  background-image: url(img/box2.jpg);
+}
+.season_box:nth-child(3) {
+  background-image: url(img/box3.jpg);
+}
+.season_box:nth-child(4) {
+  background-image: url(img/box4.jpg);
+}
