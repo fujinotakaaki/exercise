@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+main{
+  width: 960px;
+  margin: 50px auto;
+}
+.sec1{
+  margin: 50px 0;
+}
+.striped-pattern-list{
+  padding: 20px;
+  background-color: gainsboro;
+}
+.striped-pattern-list:nth-child(even){
+  background-color: white;
+}
+
+.sec2{
+  margin: 50px 0;
+}
+.boxes{
+  width: 30%;
+  margin-right: 5%;
+  height: 200px;
+  margin-bottom: 40px;
+  background-color: gold;
+  float: left;
+}
+.boxes:nth-child(3n){
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.boxes:nth-child(4n+1){
+  background-color: orange;
+}
