@@ -19,6 +19,7 @@ a {
 }
 
 header {
+  position: relative;
   width: 90%;
   padding: 15px 0;
   margin: 0 auto;
@@ -27,6 +28,15 @@ header {
 /* headerタグ内のheadlineクラスにのみ反映される */
 header .headline {
   font-size: 32px;
+}
+.social{
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+.social i{
+  display: inline-block;
+  margin-left: 20px;
 }
 
 .nav-list{
@@ -188,4 +198,8 @@ footer {
 }
 footer .footer-text{
   color: white;
+}
+
+header, nav, h2, .main-visual, footer {
+  font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
 }
