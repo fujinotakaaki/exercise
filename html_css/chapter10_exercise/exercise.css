@@ -60,12 +60,13 @@
 }
 
 @media screen and (max-width:768px) {
+  .sec{
+    width: 90%;
+    margin: 0 5%;
+  }
   .topic{
     float: none;
-    width: 90%;
+    width: 100%;
     margin: 0 0 20px 0;
-  }
-  .image1, .image2, .image3{
-    height: 350px;
   }
 }
