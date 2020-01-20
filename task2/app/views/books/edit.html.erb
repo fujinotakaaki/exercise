@@ -1,0 +1,33 @@
+
+<main>
+    <h1>Editing Book</h1>
+    <% if @book.errors.any? then %>
+    <div id="error_box">
+        <p id="error_headline"><%= @book.errors.count %> errors prohibited this book from being saved:</p>
+        <ul id="error-ul">
+            <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+    <%= form_for(@book) do |b| %>
+    <p class="form-design">
+        <span class=<%= @book.errors[:title].any? ? "error_change sp1" : "sp1" %>>Title</span><br>
+        <%= b.text_field :title, class: (@book.errors[:title].any? ? "error_field" : "") %>
+    </p>
+    <p class="form-design">
+        <span class=<%= @book.errors[:body].any? ? "error_change sp1" : "sp1" %>>Body</span><br>
+        <%= b.text_area :body, class: (@book.errors[:body].any? ? "error_field" : "") %>
+    </p>
+    <span class="sub-text"><%= b.submit "Update Book" %></span>
+    <% end %>
+
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-list-item"><%= link_to "Show", book_path(@book) %></li>
+            <li class="nav-list-item"><%= link_to "Back", books_path %></li>
+        </ul>
+    </nav>
+</main>

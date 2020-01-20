@@ -1,0 +1,14 @@
+
+<main>
+    <% if not @judge then %>
+        <p class="response">Book was successfully created.</p>
+    <% end %>
+    <p class="show-headline"><b>Title: </b><%= @book.title %></p>
+    <p class="show-headline"><b>Body: </b><%= @book.body %></p>
+    <nav>
+        <ul>
+            <li class="nav-list-item"><%= link_to "Edit", edit_book_path(@book) %></li>
+            <li class="nav-list-item"><%= link_to "Back", books_path %></li>
+        </ul>
+    </nav>
+</main>
