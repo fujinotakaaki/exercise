@@ -8,8 +8,29 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <% if false then %>
+  <!--ログイン状態ならば-->
+
+  <% else %>
+  <!--未認証時-->
+  <nav>
+    <ul>
+      <li><i class="fa fa-map-marker"></i>Home</li>
+      <li><i class="fa fa-map-marker"></i>About</li>
+      <li><i class="fa fa-map-marker"></i>sign up</li>
+      <li><i class="fa fa-map-marker"></i>login</li>
+    </ul>
+  </nav>
+  <% end %>
+  <header>
+
+  </header>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    <span>CopyRight Infratop.inc</span>
+  </footer>
 </html>
