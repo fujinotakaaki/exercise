@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+#class UsersController < User::ApplicationController
   def index
   end
   def show

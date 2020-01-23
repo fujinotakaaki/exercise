@@ -1,5 +1,5 @@
 <h1>This page is '/top'</h1>
 <span>
   <a href="http://localhost:3000/home/about">Go to "About" page</a>
-</span>
-<br><a href="http://localhost:3000/users/sign_out">Sign_out</a>
+</span><br>
+<%= link_to "Sign_out", destroy_user_session_path, method: :delete %>
