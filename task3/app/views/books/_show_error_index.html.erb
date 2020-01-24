@@ -1,0 +1,22 @@
+<div class="contain">
+  <div class="row">
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+
+    <!--error_message-->
+    <div class="col-lg-10">
+      <h2><%= unit.errors.count  %>件のエラーが発生しました。</h2>
+      <ul>
+        <% unit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+      <!--error_message-->
+    </div>
+
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+  </div>
+  </div>

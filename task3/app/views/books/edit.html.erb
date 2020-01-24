@@ -1,0 +1,44 @@
+<div class="contain">
+  <div class="row"><%= notice %></div>
+  <% if @book.errors.any? then %>
+  <% render 'books/show_error_index', unit: @book %>
+  <% end %>
+</div>
+
+<!--body-->
+<div class="container">
+  <div class="row">
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+
+    <!--サイドの余白確保-->
+    <div class="col-lg-3"></div>
+    <!--サイドの余白確保-->
+
+    <!--リスト部-->
+    <div class="col-lg-7">
+      <h2>Editing Book</h2>
+      <div class="">
+      <%= form_for(@book) do |b| %>
+      <p>Title</p>
+      <%= b.text_field :title, autofocus: true, placeholder: "Title"%>
+      <p>Body</p>
+      <%= b.text_area :body, autofocus: true, placeholder: "Body"%><br>
+      <%= b.submit "Update book", class:"btn btn-default" %>
+      <% end %>
+    </div>
+    <nav>
+      <ul>
+        <li><%= link_to "Show", book_path(@book) %></li>
+        <li><%= link_to "Back", books_path %></li>
+      </ul>
+    </nav>
+    </div>
+    <!--リスト部-->
+
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+  </div>
+</div>

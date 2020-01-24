@@ -1,1 +1,60 @@
-<h1>This page is user>edit</h1>
+<% if @user.errors.any? then %>
+<% render 'books/show_error_index', unit: @user %>
+<% end %>
+
+<!--body-->
+<div class="container">
+  <div class="row">
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+
+    <!--Plofile_section-->
+    <!--ユーザープロフィール部-->
+    <div class="col-lg-3">
+      <div class="">
+        <h2>User info</h2>
+        <%= form_for(@user) do |u| %>
+        <table>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td><%= u.text_field :name, autofocus: true, placeholder: "野獣先輩"%></td>
+          </tr>
+          <tr>
+            <td>
+              Image<br>
+              <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size: "60x60"%>
+            </td>
+            <td>  <%= u.attachment_field :profile_image, placeholder: "プロフィール画像" %></td>
+          </tr>
+          <tr>
+            <td>introduction</td>
+            <td>
+              <%= u.text_area :introduction, autofocus: true, placeholder: "24歳、学生です" %></td>
+            </tr>
+          </table>
+          <%= u.submit "変更を保存", class:"btn btn-default" %>
+          <% end %>
+        </div>
+        <!--ユーザープロフィール部-->
+
+        <!--新規投稿-->
+        <%#= render 'books/new', book_new: @book_new %>
+        <!--新規投稿-->
+      </div>
+      <!--Plofile_section-->
+
+      <!--リスト部-->
+      <div class="col-lg-7"></div>
+      <!--リスト部-->
+
+      <!--サイドの余白確保-->
+      <div class="col-lg-1"></div>
+      <!--サイドの余白確保-->
+    </div>
+  </div>

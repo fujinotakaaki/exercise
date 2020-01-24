@@ -1,10 +1,10 @@
 class BooksController < ApplicationController
 
   def create
-    @book = Book.new(book_params)
-    @book.user_id = current_user.id
-    if @book.save then
-      redirect_to book_path(@book), notice: 'メッセージが送信されました'
+    @book_new = Book.new(book_params)
+    @book_new.user_id = current_user.id
+    if @book_new.save then
+      redirect_to book_path(@book_new), notice: 'You have created book successfully.'
     else
       @books = Book.all
       render :index
@@ -12,6 +12,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path
   end
 
   def edit
@@ -29,6 +32,12 @@ class BooksController < ApplicationController
   end
 
   def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params) then
+      redirect_to book_path(@book), notice: 'You have updated book successfully.'
+    else
+      render :edit
+    end
   end
 
   private

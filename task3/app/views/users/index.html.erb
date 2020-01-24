@@ -1,1 +1,51 @@
-users/index
+
+<!--body-->
+<div class="container">
+  <div class="row">
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+
+    <!--Plofile_section-->
+    <!--ユーザープロフィール部-->
+    <div class="col-lg-3">
+      <div class=""><%= render 'users/profile', person: current_user %></div>
+      <!--ユーザープロフィール部-->
+
+      <!--新規投稿-->
+      <div class=""><%= render 'books/new', book_new: @book_new %></div>
+      <!--新規投稿-->
+    </div>
+    <!--Plofile_section-->
+
+    <!--リスト部-->
+    <div class="col-lg-7">
+      <h2>Users</h2>
+      <% title_column = ["image", "name",""] %>
+      <table>
+        <tr>
+          <th><%= title_column.shift %></th>
+          <th><%= title_column.shift %></th>
+          <th><%= title_column.shift %></th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <th><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", size:"60x60" %></th>
+          <th><%= user.name %></th>
+          <th><%= link_to 'Show', user_path(user) %></th>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    <!--リスト部-->
+
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+  </div>
+</div>
