@@ -1,9 +1,20 @@
 class UsersController < ApplicationController
-#class UsersController < User::ApplicationController
+
+  def edit
+
+  end
+
   def index
   end
+
   def show
   end
-  def edit
+
+  def update
+  end
+
+  private
+  def user_params
+    params.require(:book).permit(:name, :introduction, :profile_image)
   end
 end

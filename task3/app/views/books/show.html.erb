@@ -1,0 +1,104 @@
+books/show<br>
+<% if @book_new.errors.any? then %>
+<div class="container">
+  <div class="row">
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+
+    <!--error_message-->
+    <div class="col-lg-10">
+      <h2><%= @book_new.errors.count  %>件のエラーが発生しました。</h2>
+      <ul>
+        <% @book_new.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+      notice →<%= notice %>←notice
+      <!--error_message-->
+    </div>
+
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+  </div>
+</div>
+<% end %>
+
+<!--body-->
+<div class="container">
+  <div class="row">
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+
+    <!--Plofile_section-->
+    <!--ユーザープロフィール部-->
+    <div class="col-lg-3">
+      <div class="">
+        <h2>User info</h2>
+        <%= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
+        <table>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td><%= @book.user.name %></td>
+          </tr>
+          <tr>
+            <td>introduction</td>
+            <td><%= @book.user.introduction %></td>
+          </tr>
+        </table>
+        <%= link_to "user_edit", '#', class: "btn btn-default" %>
+      </div>
+      <!--ユーザープロフィール部-->
+
+      <!--新規投稿-->
+      <div class="">
+        <h2>New book</h2>
+        <%= form_for(@book_new) do |b|%>
+        <p>Title</p>
+        <%= b.text_field :title %>
+        <p>Opinion</p>
+        <%= b.text_area :body %>
+        <br><%= b.submit '投稿'%>
+        <% end %>
+      </div>
+    </div>
+    <!--新規投稿-->
+    <!--Plofile_section-->
+
+    <!--リスト部-->
+    <div class="col-lg-7">
+      <% title_column = ["", "Title", "Opinion",""] %>
+      <table>
+        <tr>
+          <th><%= title_column.shift %></th>
+          <th><%= title_column.shift %></th>
+          <th><%= title_column.shift %></th>
+          <th><%= title_column.shift %></th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td><%= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg' %></td>
+          <td><%= link_to @book.title, book_path(@book) %></td>
+          <td><%= @book.body %></td>
+          <td><%= link_to "Edit", "#" %><%= link_to "Destroy", "#" %></td>
+        </tr>
+      </table>
+    </div>
+    <!--リスト部-->
+
+    <!--サイドの余白確保-->
+    <div class="col-lg-1"></div>
+    <!--サイドの余白確保-->
+  </div>
+</div>
