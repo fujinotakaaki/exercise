@@ -1,9 +1,6 @@
-<div class="contain">
-  <div class="row"><%= notice %></div>
-  <% if @book.errors.any? then %>
-  <% render 'books/show_error_index', unit: @book %>
-  <% end %>
-</div>
+<% if @book.errors.any? then %>
+<%= render 'books/show_error_index', unit: @book %>
+<% end %>
 
 <!--body-->
 <div class="container">

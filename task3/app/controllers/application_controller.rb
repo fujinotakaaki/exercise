@@ -6,5 +6,9 @@ class ApplicationController < ActionController::Base
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    #↓これはログイン時にemailの代わりにnameで代替できるわけではない
+    #devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
+    #emailじゃなくてnameでログインするには'config/initializers/devise.rb'をいじるだけで良さそう。
+    #もちろんusersモデルにnameのカラムを追加する必要あり
   end
 end
