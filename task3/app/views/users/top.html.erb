@@ -1,1 +1,33 @@
-<h1>This is '/users#top'</h1>
+<% if not notice.nil? then%>
+<div class="contain">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11"><%= notice %></div>
+  </div>
+</div>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <!--サイドの余白確保-->
+    <div class="col-lg-2"></div>
+    <!--サイドの余白確保-->
+
+    <div class="col-lg-8">
+      <h1>welcome to Bookers !!</h1>
+      <p>
+        In <b>Bookers</b>,<br>
+        you can share and exchange your opinions , inpressions , and emotions<br>
+        about various books!<br>
+      </p>
+
+      <%= link_to 'Log in', new_user_session_path, class: "btn btn-default" %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-default" %>
+      <%#= link_to 'Sign up', new_user_registration_path, class: "btn btn-default" %>
+    </div>
+
+    <!--サイドの余白確保-->
+    <div class="col-lg-2"></div>
+    <!--サイドの余白確保-->
+  </div>
+</div>
