@@ -21,8 +21,8 @@
   <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li> <!-- Sign_out-->
   <% else %>
   <!--未認証時-->
-      <li><%= link_to "Home", root_path %></li> <!--homes#top-->
-      <li><%= link_to "About", home_about_path %></li> <!--homes#about-->
+      <li><%= link_to "Home", root_path %></li> <!--users#top-->
+      <li><%= link_to "About", home_about_path %></li> <!--users#about-->
       <li><%= link_to "sign up", new_user_registration_path %></li> <!--devise/registrations#new-->
       <li><%= link_to "login", new_user_session_path %></li> <!--devise/sessions#new-->
   <% end %>
