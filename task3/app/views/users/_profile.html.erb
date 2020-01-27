@@ -1,17 +1,21 @@
 <h2>User info</h2>
-<%= attachment_image_tag person, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'60x60' %>
+<%= attachment_image_tag person, :profile_image, size:'100x100', format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %>
 <table>
   <tr>
     <th></th>
     <th></th>
   </tr>
   <tr>
-    <td>name</td>
+    <td class="profile-headline"><b>name</b></td>
     <td><%= person.name %></td>
   </tr>
   <tr>
-    <td>introduction</td>
+    <td class="profile-headline"><b>introduction</b></td>
     <td><%= person.introduction %></td>
   </tr>
 </table>
-<%= link_to "プロフィール編集", current_user == person ? edit_user_path(current_user) : user_path(current_user), class: "btn btn-default" %>
+<%= link_to current_user == person ? edit_user_path(current_user) : user_path(current_user) do %>
+<div class="btn btn-default input-form-size">
+  <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+</div>
+<% end %>

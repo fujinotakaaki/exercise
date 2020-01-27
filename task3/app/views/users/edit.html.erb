@@ -6,12 +6,12 @@
 <div class="container">
   <div class="row">
     <!--サイドの余白確保-->
-    <div class="col-lg-1"></div>
+    <div class="col-md-1"></div>
     <!--サイドの余白確保-->
 
     <!--Plofile_section-->
     <!--ユーザープロフィール部-->
-    <div class="col-lg-3">
+    <div class="col-md-3">
       <div class="">
         <h2>User info</h2>
         <%= form_for(@user) do |u| %>
@@ -22,20 +22,20 @@
             <th></th>
           </tr>
           <tr>
-            <td>Name</td>
-            <td><%= u.text_field :name, autofocus: true, placeholder: "野獣先輩"%></td>
+            <td class="profile-headline"><b>Name</b></td>
+            <td><%= u.text_field :name, class: "input-form-size", placeholder: "名前", autofocus: true%></td>
           </tr>
           <tr>
-            <td>
-              Image<br>
-              <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size: "60x60"%>
+            <td class="profile-headline">
+              <b>Image</b><br>
+              <%= attachment_image_tag @user, :profile_image, size:'100x100', fallback: "no_image.jpg", size:'100x100' %>
+              <!--, class: "img-circle pull-left profile-thumb"-->
             </td>
-            <td>  <%= u.attachment_field :profile_image, placeholder: "プロフィール画像" %></td>
+            <td><%= u.attachment_field :profile_image, placeholder: "プロフィール画像" %></td>
           </tr>
           <tr>
-            <td>introduction</td>
-            <td>
-              <%= u.text_area :introduction, autofocus: true, placeholder: "24歳、学生です" %></td>
+            <td class="profile-headline"><b>introduction</b></td>
+            <td><%= u.text_area :introduction, class: "input-form-size", placeholder: "自己紹介文" %></td>
             </tr>
           </table>
           <%= u.submit "Update User", class:"btn btn-default" %>
@@ -50,11 +50,11 @@
       <!--Plofile_section-->
 
       <!--リスト部-->
-      <div class="col-lg-7"></div>
+      <div class="col-md-7"></div>
       <!--リスト部-->
 
       <!--サイドの余白確保-->
-      <div class="col-lg-1"></div>
+      <div class="col-md-1"></div>
       <!--サイドの余白確保-->
     </div>
   </div>

@@ -1,8 +1,8 @@
 <% if not notice.nil? then%>
-<div class="contain">
+<div class="container">
   <div class="row">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11"><%= notice %></div>
+    <div class="col-md-1"></div>
+    <div class="col-md-11"><%= notice %></div>
   </div>
 </div>
 <% end %>
@@ -11,12 +11,12 @@
 <div class="container">
   <div class="row">
     <!--サイドの余白確保-->
-    <div class="col-lg-1"></div>
+    <div class="col-md-1"></div>
     <!--サイドの余白確保-->
 
     <!--Plofile_section-->
     <!--ユーザープロフィール部-->
-    <div class="col-lg-3">
+    <div class="col-md-3">
       <div class=""><%= render 'users/profile', person: @user %></div>
       <!--ユーザープロフィール部-->
 
@@ -27,7 +27,7 @@
     <!--Plofile_section-->
 
     <!--リスト部-->
-    <div class="col-lg-7">
+    <div class="col-md-7">
       <h2>Books</h2>
       <% title_column = ["", "Title", "Opinion",""] %>
       <table>
@@ -36,20 +36,15 @@
           <th><%= title_column.shift %></th>
           <th><%= title_column.shift %></th>
         </tr>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
         <% @books.each do |book| %>
         <tr>
-          <th>
+          <td>
             <%= link_to user_path(book.user_id) do %>
-            <%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg", size:'60x60' %>
+            <%= attachment_image_tag book.user, :profile_image, size:'100x100', format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %>
             <% end %>
-          </th>
-          <th><%= link_to book.title, book_path(book) %></th>
-          <th><%= book.body %></th>
+          </td>
+          <td><%= link_to book.title, book_path(book) %></td>
+          <td><%= book.body %></td>
         </tr>
         <% end %>
       </table>
@@ -57,7 +52,7 @@
     <!--リスト部-->
 
     <!--サイドの余白確保-->
-    <div class="col-lg-1"></div>
+    <div class="col-md-1"></div>
     <!--サイドの余白確保-->
   </div>
 </div>

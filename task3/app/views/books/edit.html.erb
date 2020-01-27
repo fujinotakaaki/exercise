@@ -6,28 +6,25 @@
 <div class="container">
   <div class="row">
     <!--サイドの余白確保-->
-    <div class="col-lg-1"></div>
-    <!--サイドの余白確保-->
-
-    <!--サイドの余白確保-->
-    <div class="col-lg-3"></div>
+    <div class="col-md-3"></div>
     <!--サイドの余白確保-->
 
     <!--リスト部-->
-    <div class="col-lg-7">
+    <div class="col-md-6">
       <h2>Editing Book</h2>
       <div class="">
       <%= form_for(@book) do |b| %>
       <p>Title</p>
-      <%= b.text_field :title, autofocus: true, placeholder: "Title"%>
+      <%= b.text_field :title, class: "input-form-size", autofocus: true, placeholder: "Title"%>
       <p>Body</p>
-      <%= b.text_area :body, autofocus: true, placeholder: "Body"%><br>
+      <%= b.text_area :body, class: "input-form-size", placeholder: "Body"%><br>
       <%= b.submit "Update Book", class:"btn btn-default" %>
       <% end %>
     </div>
     <nav>
       <ul>
         <li><%= link_to "Show", book_path(@book) %></li>
+        <span> | </span>
         <li><%= link_to "Back", books_path %></li>
       </ul>
     </nav>
@@ -35,7 +32,7 @@
     <!--リスト部-->
 
     <!--サイドの余白確保-->
-    <div class="col-lg-1"></div>
+    <div class="col-md-3"></div>
     <!--サイドの余白確保-->
   </div>
 </div>

@@ -1,52 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Task3</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Task3</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <header>
-    <h1>Bookers</h1>
-  <nav>
-    <ul>
-  <% if user_signed_in? then %>
-  <!--ログイン状態ならば-->
-  <li><%= link_to "Home",  user_path(current_user) %></li> <!--users#show-->
-  <li><%= link_to "Users",  users_path %></li> <!--users#index-->
-  <li><%= link_to "Books",  books_path %></li> <!--books#index-->
-  <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li> <!-- Sign_out-->
-  <% else %>
-  <!--未認証時-->
-      <li><%= link_to "Home", root_path %></li> <!--users#top-->
-      <li><%= link_to "About", home_about_path %></li> <!--users#about-->
-      <li><%= link_to "sign up", new_user_registration_path %></li> <!--devise/registrations#new-->
-      <li><%= link_to "login", new_user_session_path %></li> <!--devise/sessions#new-->
-  <% end %>
-</ul>
-</nav>
-<!--Memo
-noticeはログイン時に"Signed in successfully."を表示する
-alertは、、、しらん
--->
-  </header>
+<header>
+  <div class="container">
+    <div class="row">
+      <!--余白-->
+      <div class="col-md-1"></div>
 
-  <body>
-    <%= yield %>
-  </body>
+      <div class="col-md-11">
+        <h1>Bookers</h1>
+        <nav>
+          <ul>
+            <% if user_signed_in? then %>
+            <!--ログイン状態ならば-->
+            <li>
+              <%= link_to user_path(current_user) do %>
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+              <% end %>
+            </li>
+            <li>
+              <%= link_to users_path do %>
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users
+              <% end %>
+            </li>
+            <li>
+              <%= link_to  books_path do %>
+              <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Books
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> logout
+              <% end %>
+            </li>
+            <% else %>
+            <!--未認証時-->
+            <li>
+              <%= link_to root_path do %>
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+              <% end %>
+            </li>
+            <li>
+              <%= link_to home_about_path do %>
+              <span class="glyphicon glyphicon-link" aria-hidden="true"></span> About
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path do %>
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Sign up
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> login
+              <% end %>
+            </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8"></div>
-        <div class="col-lg-3">
-          <span>©CopyRight Infratop.inc</span>
-        </div>
-        <div class="col-lg-1"></div>
+    </div>
+  </div>
+</header>
+
+<body>
+  <%= yield %>
+</body>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8"></div>
+      <div class="col-md-4">
+        <span>© CopyRight Infratop.inc</span>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 </html>

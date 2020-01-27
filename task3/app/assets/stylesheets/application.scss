@@ -15,3 +15,128 @@
  */
  @import "bootstrap-sprockets";  /*ここを追加*/
  @import "bootstrap";                   /*ここを追加*/
+
+/*common*/
+*{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  background-color: black;
+}
+table{
+  width: 100%;
+  margin-bottom: 30px;
+}
+tr{
+  width: 100%;
+  border-top: thin solid darkgray;
+}
+tr:first-child{
+  border-top: none;
+}
+tr:nth-child(n+2):hover{
+  background-color: gainsboro;
+}
+
+td{
+  width: 28%;
+  margin: 5px 0 5px 2%;
+}
+td:first-child{
+  font-size: 0px;
+}
+img{
+  margin: 10px;
+}
+ul{
+  margin: 5px 0;
+}
+ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+/*header*/
+header{
+  background-color: black;
+  color: white;
+}
+header nav{
+  text-align: right;
+}
+header nav li{
+  list-style: none;
+  display: inline-block;
+  padding: 0 5px;
+  margin: 5px 0;
+}
+h1{
+  margin: 0;
+  padding: 10px 0 0;
+}
+header a{
+  color: dimgray;
+}
+header a:hover{
+  color: gainsboro;
+}
+
+/*footer*/
+/*なし*/
+
+/*profile*/
+.input-form-size{
+  width: 100%;
+}
+.profile-headline{
+  font-size: 14px !important;
+}
+/*New Book*/
+.create-book-btn{
+  color: white;
+  background-color: #00BFFF;
+  padding: 5px;
+  border-radius: 8px;
+  border-top: thin solid lightcyan;
+  border-left: thin solid lightcyan;
+  border-right: thin solid #009FDF;
+  border-bottom: thin solid #009FDF;
+}
+.create-book-btn:hover{
+  background-color: #1E90FF;
+  border-top: thin solid #009FDF;
+  border-left: thin solid #009FDF;
+  border-right: thin solid lightcyan;
+  border-bottom: thin solid lightcyan;
+}
+
+/*books#show*/
+.deatails-text{
+  font-size: 14px;
+  padding-left: 10px;
+}
+.edit-btn{
+  color: dimgray;
+  background-color: limegreen;
+  border-radius: 3px;
+  padding: 5px
+}
+.edit-btn:hover{
+  color: whitesmoke;
+  background-color: forestgreen;
+}
+.destroy-btn{
+  color: dimgray;
+  background-color: red;
+  border-radius: 3px;
+  padding: 5px
+}
+.destroy-btn:hover{
+  color: whitesmoke;
+  background-color: crimson;
+}
