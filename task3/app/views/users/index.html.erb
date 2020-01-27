@@ -4,17 +4,13 @@
   <div class="row">
     <!--サイドの余白確保-->
     <div class="col-md-1"></div>
-    <!--サイドの余白確保-->
 
     <!--Plofile_section-->
     <!--ユーザープロフィール部-->
     <div class="col-md-3">
-      <div class=""><%= render 'users/profile', person: current_user %></div>
-      <!--ユーザープロフィール部-->
-
+      <%= render 'users/profile', person: current_user %>
       <!--新規投稿-->
-      <div class=""><%= render 'books/new', book_new: @book_new %></div>
-      <!--新規投稿-->
+      <%= render 'books/new', book_new: @book_new %>
     </div>
     <!--Plofile_section-->
 
