@@ -1,8 +1,8 @@
 <% if not notice.nil? then%>
 <div class="container">
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-11"><%= notice %></div>
+    <div class="col-xs-1"></div>
+    <div class="col-xs-11"><%= notice %></div>
   </div>
 </div>
 <% end %>
@@ -10,13 +10,10 @@
 <!--body-->
 <div class="container">
   <div class="row">
-    <!--サイドの余白確保-->
-    <div class="col-md-1"></div>
-    <!--サイドの余白確保-->
 
     <!--Plofile_section-->
     <!--ユーザープロフィール部-->
-    <div class="col-md-3">
+    <div class="col-xs-3">
       <div class=""><%= render 'users/profile', person: @book.user %></div>
       <!--ユーザープロフィール部-->
 
@@ -27,7 +24,7 @@
     <!--Plofile_section-->
 
     <!--リスト部-->
-    <div class="col-md-8">
+    <div class="col-xs-9">
       <h2>Book detail</h2>
       <% title_column = ["", "Title", "Opinion","",""] %>
       <table>
@@ -59,8 +56,5 @@
     </div>
     <!--リスト部-->
 
-    <!--サイドの余白確保-->
-    <div class="col-md-0"></div>
-    <!--サイドの余白確保-->
   </div>
 </div>

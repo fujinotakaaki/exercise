@@ -2,12 +2,10 @@
 <!--body-->
 <div class="container">
   <div class="row">
-    <!--サイドの余白確保-->
-    <div class="col-md-1"></div>
 
     <!--Plofile_section-->
     <!--ユーザープロフィール部-->
-    <div class="col-md-3">
+    <div class="col-xs-3">
       <%= render 'users/profile', person: current_user %>
       <!--新規投稿-->
       <%= render 'books/new', book_new: @book_new %>
@@ -15,7 +13,7 @@
     <!--Plofile_section-->
 
     <!--リスト部-->
-    <div class="col-md-7">
+    <div class="col-xs-9">
       <h2>Users</h2>
       <% title_column = ["image", "name",""] %>
       <table>
@@ -38,9 +36,5 @@
       </table>
     </div>
     <!--リスト部-->
-
-    <!--サイドの余白確保-->
-    <div class="col-md-1"></div>
-    <!--サイドの余白確保-->
   </div>
 </div>
